@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maira Baiguera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #131109;
+            --gold: #C8A96A;
+            --cream: #F4EFE4;
+            --cream-bg: #F9F5EC;
+            --text-dark: #26201A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--dark);
+            color: var(--cream);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--cream);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; }
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .hero-content {
+            padding: 120px 80px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-meta {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 32px;
+        }
+        .hero-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 40px;
+            color: var(--cream);
+        }
+        .hero-name em {
+            display: block;
+            font-style: italic;
+            color: var(--gold);
+        }
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--cream);
+            opacity: 0.85;
+        }
+        .hero-image {
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80');
+            background-size: cover;
+            background-position: center top;
+        }
+
+        section { padding: 120px 0; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        .sec-num {
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .sec-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: var(--cream);
+        }
+
+        #profile {
+            background: var(--cream-bg);
+            color: var(--text-dark);
+        }
+        #profile .sec-num { color: var(--gold); }
+        #profile .sec-title { color: var(--text-dark); }
+        .about-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .about-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 2vw, 1.7rem);
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--text-dark);
+            padding: 40px 0;
+            border-top: 1px solid rgba(38,32,26,0.15);
+            border-bottom: 1px solid rgba(38,32,26,0.15);
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--text-dark);
+        }
+        .about-text p:last-child { margin-bottom: 0; }
+        .cta-traiettoria {
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .cta-traiettoria:hover { opacity: 1; }
+
+        #beyond { background: var(--dark); }
+        .hub-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: var(--cream);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 60px;
+        }
+        .hub-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+        .hub-item {
+            display: block;
+            padding: 50px 40px;
+            text-decoration: none;
+            border: 1px solid rgba(244,239,228,0.08);
+            transition: background 0.3s;
+        }
+        .hub-item:hover { background: rgba(200,169,106,0.05); }
+        .hub-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 16px;
+        }
+        .hub-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--cream);
+            margin-bottom: 16px;
+        }
+        .hub-desc {
+            font-size: 0.85rem;
+            color: var(--cream);
+            opacity: 0.5;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1000px) {
+            .hub-grid, .hero-container { grid-template-columns: 1fr; }
+            nav { padding: 30px; }
+            .hero-image { min-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home" class="nav-logo">Maira Baiguera</a>
+    <ul class="nav-links">
+        <li><a href="#profile">Profilo</a></li>
+        <li><a href="#beyond">Oltre la professione</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <div class="hero-container">
+        <div class="hero-content">
+            <p class="hero-meta">Research Director &bull; Sommelier AIS</p>
+            <h1 class="hero-name">Maira <em>Baiguera</em></h1>
+            <p class="hero-tagline">Ho iniziato a fare domande. Non ho pi&ugrave; smesso.</p>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+</section>
+
+<section id="profile">
+    <div class="container">
+        <span class="sec-num">01 / PROFILO</span>
+        <h2 class="sec-title">Profilo</h2>
+        <div class="about-grid">
+            <div class="about-quote">Mi interessa scoprire sempre qualcosa che non conoscevo prima: fare ricerca di mercato, viaggiare e leggere mi portano sempre in posti nuovi.</div>
+            <div class="about-text">
+                <p>Lavoro nella ricerca di mercato da oltre dodici anni. Nel tempo ho costruito un percorso che mi ha portata dalla gestione operativa della ricerca al ruolo di direttore: gestisco studi quantitativi e integrati complessi, coordino team e seguo direttamente la relazione con il cliente.</p>
+                <p>Mi occupo di segmentazione, brand positioning, brand equity, customer engagement, marketing mix e comunicazione, su progetti in Italia e nel mondo per settori che vanno dal food &amp; beverage al largo consumo, ai media ai durables.</p>
+                <p>Quando i dati aiutano davvero a vedere cosa conta, dove andare e come: &egrave; l&igrave; che il lavoro diventa interessante.</p>
+                <a href="traiettoria.html" class="cta-traiettoria">Guarda l&rsquo;esperienza professionale &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="beyond">
+    <h2 class="hub-title">Oltre la professione</h2>
+    <div class="hub-grid">
+        <a href="viaggi.html" class="hub-item">
+            <span class="hub-label">02</span>
+            <h3 class="hub-name">Viaggi</h3>
+            <p class="hub-desc">I posti che ho visto, quelli che mi hanno sorpreso e quelli che non mi aspettavo di trovare.</p>
+        </a>
+        <a href="libri.html" class="hub-item">
+            <span class="hub-label">03</span>
+            <h3 class="hub-name">Libri</h3>
+            <p class="hub-desc">Quello che ho letto, quello che mi &egrave; rimasto. Solo una riga per ricordare.</p>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

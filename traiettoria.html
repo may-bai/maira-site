@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traiettoria &mdash; Maira Baiguera</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--dark: #131109;
+--gold: #C8A96A;
+--cream: #F4EFE4;
+--cream-bg: #F9F5EC;
+--text-dark: #26201A;
+--border: rgba(38,32,26,0.12);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--cream-bg);
+color: var(--text-dark);
+font-family: 'Inter', sans-serif;
+font-weight: 300;
+line-height: 1.7;
+}
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+padding: 30px 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(--cream-bg);
+border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1rem;
+font-weight: 400;
+color: var(--text-dark);
+text-decoration: none;
+opacity: 0.7;
+}
+.nav-back {
+font-size: 0.65rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--text-dark);
+text-decoration: none;
+opacity: 0.5;
+transition: opacity 0.2s;
+}
+.nav-back:hover { opacity: 1; }
+main {
+display: grid;
+grid-template-columns: 1fr 2fr;
+min-height: 100vh;
+padding-top: 89px;
+}
+.sidebar {
+padding: 80px 60px;
+border-right: 1px solid var(--border);
+position: sticky;
+top: 89px;
+height: calc(100vh - 89px);
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.sidebar-label {
+font-size: 0.6rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+opacity: 0.4;
+margin-bottom: 8px;
+}
+.sidebar-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.8rem;
+font-weight: 300;
+line-height: 1.1;
+}
+.content {
+padding: 80px 80px 120px;
+}
+.section-label {
+font-size: 0.6rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+opacity: 0.4;
+display: block;
+margin-bottom: 48px;
+padding-bottom: 16px;
+border-bottom: 1px solid var(--border);
+}
+.exp-list {
+display: flex;
+flex-direction: column;
+gap: 0;
+margin-bottom: 80px;
+}
+.exp-item {
+display: grid;
+grid-template-columns: 180px 1fr;
+gap: 40px;
+padding: 40px 0;
+border-bottom: 1px solid var(--border);
+}
+.exp-item:first-child { padding-top: 0; }
+.exp-meta {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+.exp-period {
+font-size: 0.75rem;
+opacity: 0.5;
+}
+.exp-company {
+font-size: 0.6rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.9;
+}
+.exp-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem;
+font-weight: 400;
+margin-bottom: 12px;
+line-height: 1.2;
+}
+.exp-title-inline {
+display: flex;
+align-items: baseline;
+gap: 12px;
+flex-wrap: wrap;
+margin-bottom: 12px;
+}
+.exp-title-inline h2 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem;
+font-weight: 400;
+line-height: 1.2;
+}
+.exp-badge {
+font-size: 0.58rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.7;
+white-space: nowrap;
+}
+.exp-desc {
+font-size: 0.88rem;
+opacity: 0.65;
+line-height: 1.8;
+}
+.education-list {
+margin-bottom: 80px;
+}
+.edu-item {
+display: grid;
+grid-template-columns: 180px 1fr;
+gap: 40px;
+padding: 24px 0;
+border-bottom: 1px solid var(--border);
+}
+.edu-item:first-of-type { padding-top: 0; }
+.edu-year {
+font-size: 0.75rem;
+opacity: 0.45;
+}
+.edu-degree {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.15rem;
+font-weight: 400;
+margin-bottom: 4px;
+}
+.edu-school {
+font-size: 0.75rem;
+opacity: 0.5;
+}
+.clients-block {
+margin-bottom: 40px;
+}
+.clients-list {
+display: flex;
+flex-wrap: wrap;
+gap: 0;
+margin-top: 32px;
+}
+.client-name {
+font-size: 0.78rem;
+opacity: 0.55;
+letter-spacing: 0.04em;
+}
+.client-name::after {
+content: ' · ';
+opacity: 0.4;
+}
+.client-name:last-child::after { content: ''; }
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html" class="nav-logo">Maira Baiguera</a>
+<a href="index.html" class="nav-back">&larr; Torna al profilo</a>
+</nav>
+
+<main>
+<div class="sidebar">
+<span class="sidebar-label">01 / Traiettoria</span>
+<h1 class="sidebar-title">Esperienza
+professionale</h1>
+</div>
+
+<div class="content">
+<div class="exp-list">
+<span class="section-label">Esperienze</span>
+
+<div class="exp-item">
+<div class="exp-meta">
+<span class="exp-period">2022 &ndash; oggi</span>
+<span class="exp-company">Beyond Research Group</span>
+</div>
+<div>
+<h2 class="exp-title">Research Director</h2>
+<p class="exp-desc">Gestisco la relazione con i clienti come account di ricerca quantitativo: seguo il progetto dall&rsquo;individuazione del bisogno fino alla presentazione dei risultati e delle considerazioni strategiche di marketing e business. Coordino il team di ricerca, interno ed esterno, e lavoro direttamente con il cliente.</p>
+
+<div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border);">
+<div class="exp-title-inline" style="margin-bottom: 12px;">
+<h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.2;">Team AI Coordinator</h2>
+<span class="exp-badge">dal 2024</span>
+</div>
+<p class="exp-desc">Coordino un team interfunzionale con l&rsquo;obiettivo di introdurre l&rsquo;AI nei processi aziendali: analizziamo i flussi di lavoro esistenti, individuiamo dove e come l&rsquo;AI pu&ograve; cambiare il modo in cui la ricerca viene prodotta e seguiamo l&rsquo;implementazione.</p>
+<a href="https://github.com/may-bai" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+  github.com/may-bai
+</a>
+
+<div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border);">
+  <div class="exp-title-inline" style="margin-bottom: 12px;">
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; line-height: 1.2;">Responsabile Qualità</h2>
+    <span class="exp-badge">dal 2026</span>
+  </div>
+  <p class="exp-desc">Responsabile del sistema di gestione della qualità aziendale certificato UNI ISO 20252:2019, lo standard internazionale per la ricerca di mercato, sociale e d&rsquo;opinione.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============================================================
+     BADGE CERTIFICAZIONI AI — aggiungi qui i tuoi badge
+     Copia e incolla il blocco qui sotto per ogni nuovo badge:
+
+<div class="edu-item">
+  <span class="edu-year">2025</span>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="URL-IMMAGINE-BADGE" style="width:48px; height:48px; object-fit:contain;">
+    <div>
+      <p class="edu-degree">Nome del corso / certificazione</p>
+      <p class="edu-school">Ente erogatore (es. Google, Coursera, Microsoft)</p>
+      <a href="URL-CERTIFICAZIONE" target="_blank" style="font-size:0.7rem; color:var(--gold); opacity:0.8;">Vedi certificazione →</a>
+    </div>
+  </div>
+</div>
+
+============================================================ -->
+
+<div class="exp-item">
+<div class="exp-meta">
+<span class="exp-period">2018 &ndash; 2022</span>
+<span class="exp-company">Beyond Research Group</span>
+</div>
+<div>
+<h2 class="exp-title">Senior Researcher</h2>
+<p class="exp-desc">Gestivo l&rsquo;analisi dei risultati con implicazioni strategiche per il cliente e coordinavo le risorse junior sulla parte operativa. La relazione con il cliente diventava sempre pi&ugrave; diretta nella gestione: brief, incontri commerciali, presentazioni.</p>
+</div>
+</div>
+
+<div class="exp-item">
+<div class="exp-meta">
+<span class="exp-period">2013 &ndash; 2018</span>
+<span class="exp-company">Beyond Research</span>
+</div>
+<div>
+<h2 class="exp-title">Junior Researcher</h2>
+<p class="exp-desc">Ho iniziato dalla parte operativa: stesura dei questionari, test, controllo delle tavole, gestione dei fornitori. Capire come funziona una ricerca nel dettaglio cambia il modo in cui la pensi quando sei tu a doverla disegnare.</p>
+</div>
+</div>
+</div>
+
+<div class="education-list">
+<span class="section-label">Formazione</span>
+<div class="edu-item">
+<span class="edu-year">2020</span>
+<div>
+<p class="edu-degree">Diploma di Sommelier</p>
+<p class="edu-school">Associazione Italiana Sommelier</p>
+</div>
+</div>
+<div class="edu-item">
+<span class="edu-year">2013</span>
+<div>
+<p class="edu-degree">Master in Enologia e Marketing</p>
+<p class="edu-school">Universit&agrave; Cattolica del Sacro Cuore</p>
+</div>
+</div>
+<div class="edu-item">
+<span class="edu-year">2012</span>
+<div>
+<p class="edu-degree">Laurea Magistrale &mdash; International Management</p>
+<p class="edu-school">Universit&agrave; Cattolica del Sacro Cuore</p>
+</div>
+</div>
+<div class="edu-item">
+<span class="edu-year">2010</span>
+<div>
+<p class="edu-degree">Laurea Triennale &mdash; Economia e Management per l&rsquo;Arte, la Cultura e la Comunicazione</p>
+<p class="edu-school">Universit&agrave; Commerciale Luigi Bocconi</p>
+</div>
+</div>
+</div>
+
+<div class="clients-block">
+<span class="section-label">Alcuni dei clienti con cui ho lavorato</span>
+<div class="clients-list">
+<span class="client-name">Campari</span>
+<span class="client-name">Arena</span>
+<span class="client-name">De Cecco</span>
+<span class="client-name">Consorzio Franciacorta</span>
+<span class="client-name">Bauer</span>
+<span class="client-name">Cellular Line</span>
+<span class="client-name">Amplifon</span>
+<span class="client-name">QVC</span>
+<span class="client-name">Valsoia</span>
+<span class="client-name">Cairo/RCS</span>
+<span class="client-name">Pizzoli</span>
+<span class="client-name">The North Face</span>
+<span class="client-name">L&rsquo;Or&eacute;al</span>
+<span class="client-name">Ferrero</span>
+<span class="client-name">Galbusera</span>
+<span class="client-name">Shopfully</span>
+<span class="client-name">Colgate-Palmolive</span>
+<span class="client-name">Kellogg&rsquo;s</span>
+<span class="client-name">Consorzio Parmigiano Reggiano</span>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>
